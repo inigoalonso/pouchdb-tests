@@ -9,10 +9,11 @@
   // EDITING STARTS HERE (you dont need to edit anything above this line)
 
   var svgNS = "http://www.w3.org/2000/svg"; 
-  function createCard(label)
+  function createCard(label,x,y)
   {
     var myCard = document.createElementNS(svgNS,"g");
     myCard.setAttributeNS(null,"id","myCard");
+    myCard.setAttributeNS(null,"transform","translate("+x+","+y+")");
 
     document.getElementById("mySVG").appendChild(myCard);
 
@@ -173,7 +174,7 @@
       checkbox.checked = true;
     }
 
-    createCard(todo.title);
+    createCard(todo.title,30,30);
     return li;
   }
 
